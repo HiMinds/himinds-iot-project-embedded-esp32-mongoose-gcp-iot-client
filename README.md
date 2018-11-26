@@ -26,8 +26,8 @@ Schematics can be found [here](./docs/esp32-thing-schematic.pdf)
 
 This instruction is based on the following [instruction](https://github.com/cesanta/mongoose-os-docs/blob/master/quickstart/cloud/google.md) made my Cesanta.
 
-## Highly recommended links
-* [Build a Weather Station using Google Cloud IoT Core and MongooseOS] (https://medium.com/google-cloud/build-a-weather-station-using-google-cloud-iot-core-and-mongooseos-7a78b69822c5)
+## Recommended links
+* [Build a Weather Station using Google Cloud IoT Core and MongooseOS](https://medium.com/google-cloud/build-a-weather-station-using-google-cloud-iot-core-and-mongooseos-7a78b69822c5)
 * [Scalable IoT Integration
 ](https://coertvonk.com/sw/embedded/sonoff-mqtt-google-actions-23997)
 * [Bike Route Data Gatherer
