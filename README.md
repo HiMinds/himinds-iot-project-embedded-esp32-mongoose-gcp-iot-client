@@ -1,6 +1,6 @@
 # ESP32 IoT client to connect to Google IoT Core
 
-## Prerequisite
+## Prerequisite and installation
 If you need some help to setup your ESP32 and Mongoose environment try [this](https://github.com/HiMinds/himinds-iot-project-embedded-esp32-mongoose-os-vscode-setup).
 
 ## Overview
