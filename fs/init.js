@@ -47,7 +47,8 @@ let esp32ThingLED = Cfg.get('pins.led');
 let topicEvents = '/devices/' + Cfg.get('device.id') + '/events';
 let topicState = '/devices/' + Cfg.get('device.id') + '/state';
 let topicConfig = '/devices/' + Cfg.get('device.id') + '/config';
-let topicConmmands = '/devices/' + Cfg.get('device.id') + '/commands/#';
+let topicCommands = '/devices/' + Cfg.get('device.id') + '/commands/#';
+let topicCommandHardware = '/devices/' + Cfg.get('device.id') + '/commands/hardware';
 
 let appName = 'init.js             ';
 
@@ -61,7 +62,7 @@ let tempOffset = 10;
 if (PCADC.pc_adc_configuration() === 0) 
     print("ADC configured");
 
-// convert farenheits to celsius
+// convert Fahrenheit to Celsius
 function getTemperature() {
     return ((5 / 9) * (ESP32.temp() - 32) - tempOffset);
 }
@@ -86,7 +87,7 @@ function getState() {
 function publishEvent() {
     let eventData = getEvent();
     if (MQTT.pub(topicEvents, eventData)) {
-        print(appName, "Published Event: " +eventData);
+        print(appName, "Published Event: " + eventData);
     } else {
         print(appName, 'Not connected');
     }
@@ -110,11 +111,11 @@ MQTT
         tempOffset = obj.tempOffset;
     }, null);
 
-MQTT.sub(topicConmmands, function (conn, topic, msg) {
+MQTT.sub(topicCommands, function (conn, topic, msg) {
     print('Topic:', topic, 'message:', msg);
 
     let obj = JSON.parse(msg);
-    if (topic === '/devices/esp32_04FFB0/commands/hardware') 
+    if (topic === topicCommandHardware) 
         GPIO.write(esp32ThingLED, obj.led);
 
     }
