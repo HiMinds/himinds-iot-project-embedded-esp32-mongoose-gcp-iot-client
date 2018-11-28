@@ -171,3 +171,20 @@ Commands are transitory, one-time directives sent to devices that are connected 
 
 
 Google's documentation on the subject can be found [here](https://cloud.google.com/iot/docs/concepts/devices).
+
+## Running the code
+
+In mos.yml change the values:
+
+  - ["wifi.sta.ssid", "YOUR SSID"]
+  - ["wifi.sta.pass", "YOUR KEY"]
+  - ["device.id", "YOUR ID"]
+  
+```
+mos gcp-iot-setup --gcp-project YOUR_PROJECT_ID --gcp-region us-central1 --gcp-registry YOUR_REGISTRY
+```
+This will generate new keys and enable GCP.
+
+  - ["gcp.enable", true]
+
+
